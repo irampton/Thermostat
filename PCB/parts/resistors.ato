@@ -1,0 +1,48 @@
+# Resistor definitions using standard Atopile resistor interface
+
+import Resistor
+
+module Resistor_330:
+    designator_prefix = "R"
+    pin a
+    pin b
+    body = new Resistor
+    body.resistance = 330ohm +/- 5%
+    body.p1 ~ a
+    body.p2 ~ b
+
+module Resistor_1k:
+    designator_prefix = "R"
+    pin a
+    pin b
+    body = new Resistor
+    body.resistance = 1kohm +/- 5%
+    body.p1 ~ a
+    body.p2 ~ b
+
+module Resistor_4k7:
+    designator_prefix = "R"
+    pin a
+    pin b
+    body = new Resistor
+    body.resistance = 4700ohm +/- 5%
+    body.p1 ~ a
+    body.p2 ~ b
+
+module Resistor_10k:
+    designator_prefix = "R"
+    pin a
+    pin b
+    body = new Resistor
+    body.resistance = 10kohm +/- 5%
+    body.p1 ~ a
+    body.p2 ~ b
+
+module Resistor_100k:
+    designator_prefix = "R"
+    pin a
+    pin b
+    body = new Resistor
+    body.resistance = 100kohm +/- 5%
+    body.p1 ~ a
+    body.p2 ~ b

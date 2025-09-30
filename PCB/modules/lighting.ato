@@ -1,0 +1,72 @@
+# Lighting modules
+import ElectricPower
+import ElectricLogic
+from "atopile/worldsemi-ws2812b/worldsemi-ws2812b.ato" import Worldsemi_WS2812B_5050
+from "parts/Texas_Instruments_SN74HCT125DR/Texas_Instruments_SN74HCT125DR.ato" import Texas_Instruments_SN74HCT125DR_package
+
+module WS2812Bar14:
+    power = new ElectricPower
+    data_in = new ElectricLogic
+    data_out = new ElectricLogic
+
+    led0 = new Worldsemi_WS2812B_5050
+    led1 = new Worldsemi_WS2812B_5050
+    led2 = new Worldsemi_WS2812B_5050
+    led3 = new Worldsemi_WS2812B_5050
+    led4 = new Worldsemi_WS2812B_5050
+    led5 = new Worldsemi_WS2812B_5050
+    led6 = new Worldsemi_WS2812B_5050
+    led7 = new Worldsemi_WS2812B_5050
+    led8 = new Worldsemi_WS2812B_5050
+    led9 = new Worldsemi_WS2812B_5050
+    led10 = new Worldsemi_WS2812B_5050
+    led11 = new Worldsemi_WS2812B_5050
+    led12 = new Worldsemi_WS2812B_5050
+    led13 = new Worldsemi_WS2812B_5050
+
+    level_shifter = new Texas_Instruments_SN74HCT125DR_package
+    power.hv ~ level_shifter.VCC
+    power.lv ~ level_shifter.GND
+    level_shifter.n1OE ~ power.lv
+    level_shifter.P1A ~ data_in.line
+    level_shifter.n2OE ~ power.hv
+    level_shifter.n3OE ~ power.hv
+    level_shifter.n4OE ~ power.hv
+    level_shifter.P2A ~ power.lv
+    level_shifter.P3A ~ power.lv
+    level_shifter.P4A ~ power.lv
+
+    shifted_data = new ElectricLogic
+    shifted_data.reference ~ power
+    shifted_data.line ~ level_shifter.P1Y
+    shifted_data ~ led0.data_in
+
+    power ~ led0.power
+    power ~ led1.power
+    power ~ led2.power
+    power ~ led3.power
+    power ~ led4.power
+    power ~ led5.power
+    power ~ led6.power
+    power ~ led7.power
+    power ~ led8.power
+    power ~ led9.power
+    power ~ led10.power
+    power ~ led11.power
+    power ~ led12.power
+    power ~ led13.power
+
+    led0.data_out ~ led1.data_in
+    led1.data_out ~ led2.data_in
+    led2.data_out ~ led3.data_in
+    led3.data_out ~ led4.data_in
+    led4.data_out ~ led5.data_in
+    led5.data_out ~ led6.data_in
+    led6.data_out ~ led7.data_in
+    led7.data_out ~ led8.data_in
+    led8.data_out ~ led9.data_in
+    led9.data_out ~ led10.data_in
+    led10.data_out ~ led11.data_in
+    led11.data_out ~ led12.data_in
+    led12.data_out ~ led13.data_in
+    led13.data_out ~ data_out

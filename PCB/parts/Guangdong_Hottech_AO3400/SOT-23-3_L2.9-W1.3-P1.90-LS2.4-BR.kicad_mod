@@ -1,0 +1,171 @@
+(footprint "Guangdong_Hottech_AO3400:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "b486bcc5-a6ae-46a1-ad1e-ec99283c8085")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
+        (at 0 4.95 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "dad2e128-ddc2-4d2c-9e34-d75f90ec1698")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "a18b307d2a963bb5dd43a09c3430a7317ad9698bc309d3265c77ccc6952ab2bc"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "706dc1d0-0deb-4e26-98d0-e4032575ae88")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 0.73 -1.53)
+        (end -0.73 -1.53)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "187f0cca-4cd3-4bc4-a931-5a64ec25daaf")
+    )
+    (fp_line
+        (start -0.73 -1.53)
+        (end -0.73 -0.49)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "d4c7a1ae-a3a8-4328-a800-9230f18cf70c")
+    )
+    (fp_line
+        (start 0.73 1.53)
+        (end -0.73 1.53)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f463bc48-bef7-4f0a-9e83-38bdeb492e2c")
+    )
+    (fp_line
+        (start -0.73 1.53)
+        (end -0.73 0.49)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "fcc475b5-2b20-49e2-9cd8-ff522d7f5543")
+    )
+    (fp_line
+        (start 0.73 -0.46)
+        (end 0.73 0.46)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "ef6c7019-e0c0-4bc5-b448-cfc1a6cd847c")
+    )
+    (fp_circle
+        (center 1.2 1.45)
+        (end 1.23 1.45)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "0aed8332-5303-4495-9740-e58e7b39f9b1")
+    )
+    (fp_circle
+        (center 1.46 1.1)
+        (end 1.56 1.1)
+        (stroke
+            (width 0.2)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "f3f824da-943b-478b-a726-b16303400e21")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "4f67d37b-1aa4-439e-ad6f-2dccf57a58b4")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (uuid "b486bcc5-a6ae-46a1-ad1e-ec99283c8085")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at 1 0.95 0)
+        (size 1.25 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "b35283db-8afb-45a1-805b-dc09c125c82e")
+    )
+    (pad "2" smd rect
+        (at 1 -0.95 0)
+        (size 1.25 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "2f06c1ca-e147-4ace-9bab-855a6d0f37b8")
+    )
+    (pad "3" smd rect
+        (at -1 0 0)
+        (size 1.25 0.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "fe36c2ae-6353-4eee-bf7a-efd1dc5c7fac")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\Guangdong_Hottech_AO3400\\SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 180)
+        )
+    )
+)

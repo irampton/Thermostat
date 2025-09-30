@@ -1,0 +1,72 @@
+# Relay control modules
+import Relay
+from "parts/resistors.ato" import Resistor_1k
+from "parts/resistors.ato" import Resistor_100k
+from "parts/MDD_Microdiode_Electronics_SS14/MDD_Microdiode_Electronics_SS14.ato" import MDD_Microdiode_Electronics_SS14_package
+from "parts/Ningbo_Songle_Relay_SRD_05VDC_SL_C/Ningbo_Songle_Relay_SRD_05VDC_SL_C.ato" import Ningbo_Songle_Relay_SRD_05VDC_SL_C_package
+from "parts/Guangdong_Hottech_AO3400/Guangdong_Hottech_AO3400.ato" import Guangdong_Hottech_AO3400_package
+
+module Ningbo_Songle_Relay_SRD_05VDC_SL_C:
+    designator_prefix = "K"
+    pin coil_pos
+    pin coil_neg
+    pin common
+    pin normally_open
+    pin normally_closed
+
+    body = new Relay
+    body.coil_max_voltage = 5V
+    body.coil_max_current = 90mA +/- 20%
+    body.coil_resistance = 70ohm +/- 10%
+    body.contact_max_switching_voltage = 250V
+    body.contact_max_switching_current = 10A
+    body.contact_max_current = 10A
+    body.coil_power.hv ~ coil_pos
+    body.coil_power.lv ~ coil_neg
+    body.switch_a_common ~ common
+    body.switch_a_no ~ normally_open
+    body.switch_a_nc ~ normally_closed
+
+    package = new Ningbo_Songle_Relay_SRD_05VDC_SL_C_package
+    package.1 ~ coil_pos
+    package.2 ~ coil_neg
+    package.3 ~ common
+    package.4 ~ normally_closed
+    package.5 ~ normally_open
+
+module Guangdong_Hottech_AO3400:
+    designator_prefix = "Q"
+    pin gate
+    pin drain
+    pin source
+
+    package = new Guangdong_Hottech_AO3400_package
+    package.G ~ gate
+    package.D ~ drain
+    package.S ~ source
+
+module RelayStage:
+    pin control
+    pin supply_5v
+    pin ground
+    pin hot_in
+    pin switched_out
+
+    relay = new Ningbo_Songle_Relay_SRD_05VDC_SL_C
+    driver = new Guangdong_Hottech_AO3400
+    gate_res = new Resistor_1k
+    bleed_res = new Resistor_100k
+    flyback = new MDD_Microdiode_Electronics_SS14_package
+
+    supply_5v ~ relay.coil_pos
+    driver.drain ~ relay.coil_neg
+    driver.source ~ ground
+    flyback.K ~ supply_5v
+    flyback.A ~ driver.drain
+    gate_res.a ~ control
+    gate_res.b ~ driver.gate
+    bleed_res.a ~ driver.gate
+    bleed_res.b ~ ground
+
+    relay.common ~ hot_in
+    relay.normally_open ~ switched_out

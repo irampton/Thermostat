@@ -1,0 +1,19 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Guangdong_Hottech_AO3400_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C181090", date="2025-09-28T20:57:06.757701+00:00", checksum="2902f1ec33650ccc16c0e239ab7093504eafdbe552d27638c7d255e7c9d7e257">
+
+    trait is_atomic_part<manufacturer="Guangdong Hottech", partnumber="AO3400", footprint="SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR.kicad_mod", symbol="AO3400_C181090.kicad_sym", model="SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C181090", manufacturer="Guangdong Hottech", partno="AO3400">
+    trait has_designator_prefix<prefix="Q">
+
+    # pins
+    signal D ~ pin 3
+    signal G ~ pin 1
+    signal S ~ pin 2

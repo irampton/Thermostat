@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component MDD_Microdiode_Electronics_DB207S_package:
+    """DB207S"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C29174", date="2025-09-28T21:58:32.491422+00:00", checksum="b0901cbb6329ced8ed13aa7e38c3cb393122b6e18bfa057cecfb245c5ebb4e99">
+
+    trait is_atomic_part<manufacturer="MDD（Microdiode Electronics）", partnumber="DB207S", footprint="DBS_L8.2-W6.4-P5.10-LS10.0-TL.kicad_mod", symbol="DB207S_C29174.kicad_sym", model="DBS_L8.2-W6.4-P5.10-LS10.0-TL.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C29174", manufacturer="MDD（Microdiode Electronics）", partno="DB207S">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    signal ac1 ~ pin 3
+    signal ac2 ~ pin 4
+    signal neg ~ pin 2
+    signal pos ~ pin 1

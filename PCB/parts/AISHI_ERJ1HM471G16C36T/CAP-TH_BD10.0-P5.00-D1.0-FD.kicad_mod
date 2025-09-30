@@ -1,0 +1,159 @@
+(footprint "AISHI_ERJ1HM471G16C36T:CAP-TH_BD10.0-P5.00-D1.0-FD"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "23e2cbdc-616d-4e8d-83a8-4267b6c333e6")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "CAP-TH_BD10.0-P5.00-D1.0-FD"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "f812c1e9-8982-4f58-9f44-cba617060fc3")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "0fe3e15e6897f1ba043d66b292e1353dae29a54c9a9f24c8806555be6a44f4cb"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "ed690d4d-e247-444e-9a8f-3402378d232b")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start -4.57 0)
+        (end -3.56 0)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "094ee1e2-6881-4b61-a610-d3e846f943ab")
+    )
+    (fp_line
+        (start -4.06 -0.76)
+        (end -4.06 0.76)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "26ab3765-4b39-4484-abe5-2f7233f85e70")
+    )
+    (fp_circle
+        (center -5 5)
+        (end -4.97 5)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "a8d8233d-0c85-4948-b0be-2390134d4908")
+    )
+    (fp_circle
+        (center 2.54 0)
+        (end 2.69 0)
+        (stroke
+            (width 0.3)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "9e71ccde-58d5-4db8-abc2-e7fe7eedd95b")
+    )
+    (fp_circle
+        (center -2.54 0)
+        (end -2.39 0)
+        (stroke
+            (width 0.3)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "91bc9e7b-7e33-4eb1-b04f-09cf6ba38bd6")
+    )
+    (fp_circle
+        (center 0 0)
+        (end 5 0)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.SilkS")
+        (uuid "888f6cbf-d1de-4a38-bdc2-7ca4827d0c63")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "b165cf07-20be-4aa8-bcb7-10373876a47d")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "23e2cbdc-616d-4e8d-83a8-4267b6c333e6")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" thru_hole circle
+        (at -2.54 0 0)
+        (size 1.6 1.6)
+        (drill 0.9999979999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "e5073435-7a6c-4ac3-ac0f-2b9e021507db")
+    )
+    (pad "2" thru_hole circle
+        (at 2.54 0 0)
+        (size 1.6 1.6)
+        (drill 0.9999979999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "fc2dbca1-3df3-4518-bf93-9283f58348ad")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\AISHI_ERJ1HM471G16C36T\\CAP-TH_D10.0-H16.0-P5.00.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

@@ -1,0 +1,160 @@
+# Notes
+# - This models the *breakout board* (aka “Super Mini”), not the raw ESP32‑C3 MCU.
+# - Pin labels follow common silkscreen: 5V, 3V3, GND, and D0..D10 plus GPIO20/GPIO21.
+# - The board typically regulates 5V→3V3 on‑board. If you feed 5V, **don’t** back‑feed 3V3.
+# - You can power it either from 5V (recommended) or directly 3V3 (advanced). Both rails are exposed below.
+# - Update the pin names if your specific board’s silkscreen differs.
+#pragma experiment("TRAITS")
+
+import ElectricPower
+import ElectricLogic
+import I2C
+import has_designator_prefix
+import is_atomic_part
+
+# --------------
+# Footprint component (pin map)
+# --------------
+component ESP32_C3_SuperMini_footprint:
+    trait has_designator_prefix<prefix="U"> 
+    trait is_atomic_part<manufacturer="Espressif", partnumber="ESP32-C3 SuperMini", footprint="ESP32C3-supermini.kicad_mod", symbol="ESP32C3-supermini.kicad_sym">
+    # Power
+    pin p5V
+    pin p3V3
+    pin GND
+
+    # Digital I/O header labels (silk typically shows D0..D10 plus D20/D21)
+    pin 0
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+    pin 7
+    pin 8
+    pin 9
+    pin 10
+    pin 20
+    pin 21
+
+    # If your board exposes more pins (EN/BOOT/RST pads, etc.),
+    # add additional pins here and wire them in the driver as needed.
+
+
+# --------------
+# Driver wrapper (exposes typed interfaces)
+# --------------
+module ESP32_C3_SuperMini_driver:
+    # --- Power rails ---
+    power_5v = new ElectricPower
+    power_3v3 = new ElectricPower
+
+    # Mark both rails available; pick one in your design. If you use 5V, leave 3V3 unconnected.
+    # Typical constraints (adjust per your board/regulator):
+    assert power_5v.voltage within 4.75V to 5.25V
+    assert power_3v3.voltage within 3.0V to 3.6V
+
+    # --- General GPIO breakout (13 signals, lines are referenced to board GND) ---
+    gpio = new ElectricLogic[13]
+
+    # --- Convenience bus breakouts (wire these to whichever D-pins you choose) ---
+    # I²C
+    i2c0 = new I2C
+    i2c0.frequency = 400kHz  # typical default; change as needed
+
+    # SPI (modeled as loose ElectricLogic lines; tie to chosen D‑pins)
+    spi0_sclk = new ElectricLogic
+    spi0_mosi = new ElectricLogic
+    spi0_miso = new ElectricLogic
+    spi0_cs   = new ElectricLogic
+
+    # UART0 (boot UART)
+    uart0_rx = new ElectricLogic
+    uart0_tx = new ElectricLogic
+
+    # --- Board footprint instance ---
+    board = new ESP32_C3_SuperMini_footprint
+
+    # --- Power wiring ---
+    power_5v.hv ~ board.p5V
+    power_5v.lv ~ board.GND
+    power_3v3.hv ~ board.p3V3
+    power_3v3.lv ~ board.GND
+
+    # --- GPIO to header mapping (edit to match your project’s usage) ---
+    # By default we map D0..D10 to gpio[0]..gpio[10] and bring D20/D21 out on gpio[11]/gpio[12]
+    gpio[0].line  ~ board.0;  gpio[0].reference ~ power_3v3  # logic referenced to 3V3/GND
+    gpio[1].line  ~ board.1;  gpio[1].reference ~ power_3v3
+    gpio[2].line  ~ board.2;  gpio[2].reference ~ power_3v3
+    gpio[3].line  ~ board.3;  gpio[3].reference ~ power_3v3
+    gpio[4].line  ~ board.4;  gpio[4].reference ~ power_3v3
+    gpio[5].line  ~ board.5;  gpio[5].reference ~ power_3v3
+    gpio[6].line  ~ board.6;  gpio[6].reference ~ power_3v3
+    gpio[7].line  ~ board.7;  gpio[7].reference ~ power_3v3
+    gpio[8].line  ~ board.8;  gpio[8].reference ~ power_3v3
+    gpio[9].line  ~ board.9;  gpio[9].reference ~ power_3v3
+    gpio[10].line ~ board.10; gpio[10].reference ~ power_3v3
+    gpio[11].line ~ board.20; gpio[11].reference ~ power_3v3
+    gpio[12].line ~ board.21; gpio[12].reference ~ power_3v3
+
+    # --- Boot/UART (GPIO20=RX, GPIO21=TX on this board) ---
+    uart0_rx.line ~ board.20;  uart0_rx.reference ~ power_3v3
+    uart0_tx.line ~ board.21;  uart0_tx.reference ~ power_3v3
+
+    # --- Bind I²C and SPI lines to whichever header pins you’ll use ---
+    # Below is a sensible default based on common C3 Super Mini pinouts. Adjust as needed.
+    # I²C: SDA=2, SCL=3
+    i2c0.sda.line ~ board.2; i2c0.sda.reference ~ power_3v3
+    i2c0.scl.line ~ board.3; i2c0.scl.reference ~ power_3v3
+
+    # SPI: SCK=8, MOSI=10, MISO=9, CS=7
+    spi0_sclk.line ~ board.8;  spi0_sclk.reference ~ power_3v3
+    spi0_mosi.line ~ board.10; spi0_mosi.reference ~ power_3v3
+    spi0_miso.line ~ board.9;  spi0_miso.reference ~ power_3v3
+    spi0_cs.line   ~ board.7;  spi0_cs.reference ~ power_3v3
+
+
+# --------------
+# Example usage (hook to your design)
+# --------------
+module Example:
+    # Rails
+    p5  = new ElectricPower
+    p33 = new ElectricPower
+
+    # Peripherals
+    i2c  = new I2C
+
+    # Board
+    esp = new ESP32_C3_SuperMini_driver
+
+    # Power from 5V only (don’t also drive esp.power_3v3)
+    p5 ~ esp.power_5v
+
+    # Share 3V3 reference for logic
+    p33.lv ~ esp.power_3v3.lv  # ground reference
+
+    # I²C from ESP to a device (example)
+    i2c ~ esp.i2c0
+
+    # Example GPIO hookup
+    led = new ElectricLogic
+    led.line ~ esp.gpio[0].line
+    led.reference ~ esp.power_3v3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

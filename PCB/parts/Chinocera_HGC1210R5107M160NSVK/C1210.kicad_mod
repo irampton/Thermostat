@@ -1,0 +1,208 @@
+(footprint "Chinocera_HGC1210R5107M160NSVK:C1210"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "974c4874-cfa1-48e6-9fa8-925c86e45579")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "C1210"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "6fa78db4-00a0-4661-8139-9857c6196bf2")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "8261e1653fc8fff7027f2746169b3c420fdff898f7b6d7cda237241fd42f7b44"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "482f0759-fb63-414b-89d3-e21e2d7004a2")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 2.56 1.43)
+        (end 2.56 -1.43)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "69ef834d-be19-4262-b487-801b9e790987")
+    )
+    (fp_line
+        (start 2.41 -1.58)
+        (end 0.78 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "5d3bc367-a8f1-4f75-84a3-5a9c36bb3d04")
+    )
+    (fp_line
+        (start 0.78 1.58)
+        (end 2.41 1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "6258d529-a0e1-432f-8e71-8a693aa8c15c")
+    )
+    (fp_line
+        (start -2.41 -1.58)
+        (end -0.78 -1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7441fc94-53fe-4192-af2d-df80ff9589c4")
+    )
+    (fp_line
+        (start -0.78 1.58)
+        (end -2.41 1.58)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "5591ca31-5530-4643-82fb-a153ec8c1a34")
+    )
+    (fp_line
+        (start -2.56 1.43)
+        (end -2.56 -1.43)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "dba77eed-8968-4dee-97db-7b39b9785f57")
+    )
+    (fp_arc
+        (start 2.56 1.43)
+        (mid 2.516066017177982 1.536066017177982)
+        (end 2.41 1.5799999999999998)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "2c755887-b96c-445d-9235-5ee2203047f5")
+    )
+    (fp_arc
+        (start 2.41 -1.58)
+        (mid 2.5160660171779825 -1.536066017177982)
+        (end 2.5600000000000005 -1.43)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "96867743-a84f-4d4d-b1ac-73482ed95d46")
+    )
+    (fp_arc
+        (start -2.56 1.43)
+        (mid -2.516066017177982 1.536066017177982)
+        (end -2.41 1.5799999999999998)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "4f2421d2-f84a-4246-be79-c138f93b45e4")
+    )
+    (fp_arc
+        (start -2.41 -1.58)
+        (mid -2.5160660171779825 -1.536066017177982)
+        (end -2.5600000000000005 -1.43)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "21c7c0f3-cb4e-45f2-b2f3-16f98d4f9f85")
+    )
+    (fp_circle
+        (center -1.6 1.25)
+        (end -1.57 1.25)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "f74a0fdd-3301-4faf-965e-c7fb75a28782")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "8a987103-65d8-4558-9d9e-35d64868e943")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "974c4874-cfa1-48e6-9fa8-925c86e45579")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 1.52 0 0)
+        (size 1.63 2.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "c9000950-360e-41e5-8a52-a4d70b89f699")
+    )
+    (pad "1" smd rect
+        (at -1.52 0 0)
+        (size 1.63 2.7)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "0232f51f-4aed-4be6-a65d-a5da9dcd0379")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\Chinocera_HGC1210R5107M160NSVK\\C1210_L3.2-W2.5-H2.5.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

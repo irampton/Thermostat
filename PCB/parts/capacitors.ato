@@ -1,0 +1,33 @@
+# Capacitor definitions using standard Atopile capacitor interface
+
+import Capacitor
+
+module BulkCap_100uF_16V:
+    designator_prefix = "C"
+    pin positive
+    pin negative
+    body = new Capacitor
+    body.capacitance = 100uF +/- 20%
+    body.max_voltage = 16V
+    body.p1 ~ positive
+    body.p2 ~ negative
+
+module Cap_10uF:
+    designator_prefix = "C"
+    pin a
+    pin b
+    body = new Capacitor
+    body.capacitance = 10uF +/- 20%
+    body.max_voltage = 16V
+    body.p1 ~ a
+    body.p2 ~ b
+
+module Cap_0u1:
+    designator_prefix = "C"
+    pin a
+    pin b
+    body = new Capacitor
+    body.capacitance = 100nF +/- 10%
+    body.max_voltage = 50V
+    body.p1 ~ a
+    body.p2 ~ b

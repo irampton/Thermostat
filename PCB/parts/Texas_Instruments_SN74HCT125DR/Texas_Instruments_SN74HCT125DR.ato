@@ -1,0 +1,30 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Texas_Instruments_SN74HCT125DR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C352957", date="2025-09-28T21:38:55.337351+00:00", checksum="1fb84909c175897dcb8610b3dd768d6ef450c92055f4159f2761759e29922005">
+
+    trait is_atomic_part<manufacturer="Texas Instruments", partnumber="SN74HCT125DR", footprint="SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL.kicad_mod", symbol="SN74HCT125DR.kicad_sym", model="SOIC-14_L8.6-W3.9-H1.8-LS6.0-P1.27.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C352957", manufacturer="Texas Instruments", partno="SN74HCT125DR">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 7
+    signal P1A ~ pin 2
+    signal P1Y ~ pin 3
+    signal P2A ~ pin 5
+    signal P2Y ~ pin 6
+    signal P3A ~ pin 9
+    signal P3Y ~ pin 8
+    signal P4A ~ pin 12
+    signal P4Y ~ pin 11
+    signal VCC ~ pin 14
+    signal n1OE ~ pin 1
+    signal n2OE ~ pin 4
+    signal n3OE ~ pin 10
+    signal n4OE ~ pin 13

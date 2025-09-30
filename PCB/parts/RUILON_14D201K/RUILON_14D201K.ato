@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component RUILON_14D201K_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C233167", date="2025-09-28T19:15:32.109315+00:00", checksum="8a0e44481b7f422406dfff2e74ad5ce1905eea23167390fedd3ef0cba9d14b3a">
+
+    trait is_atomic_part<manufacturer="RUILON", partnumber="14D201K", footprint="RES-TH_L17.0-W4.5-P7.50-D0.9-S2.00.kicad_mod", symbol="14D201K_C233167.kicad_sym", model="RES-TH_L16.5-W4.5-H20.0-P7.50-D0.8-S2.00.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C233167", manufacturer="RUILON", partno="14D201K">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 2
+    pin 1

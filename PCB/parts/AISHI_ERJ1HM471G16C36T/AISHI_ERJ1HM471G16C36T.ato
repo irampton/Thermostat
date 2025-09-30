@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component AISHI_ERJ1HM471G16C36T_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C3038120", date="2025-09-28T22:19:30.388154+00:00", checksum="c50343db7cba8f99332b0b20819e838392e2e80585fb7d9143c8738c8c81e31d">
+
+    trait is_atomic_part<manufacturer="AISHI", partnumber="ERJ1HM471G16C36T", footprint="CAP-TH_BD10.0-P5.00-D1.0-FD.kicad_mod", symbol="ERJ1HM471G16C36T.kicad_sym", model="CAP-TH_D10.0-H16.0-P5.00.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C3038120", manufacturer="AISHI", partno="ERJ1HM471G16C36T">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    pin 1
+    pin 2

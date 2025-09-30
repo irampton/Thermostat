@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component KNSCHA_01EC1385_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2831771", date="2025-09-28T04:15:18.438678+00:00", checksum="12df315a573a06a8ef0a3d4dcce650513d1c086f5a8bf5c3a8898a4ca9731c3d">
+
+    trait is_atomic_part<manufacturer="KNSCHA", partnumber="01EC1385", footprint="CAP-TH_BD5.0-P2.00-D0.5-FD-1.kicad_mod", symbol="01EC1385.kicad_sym", model="CAP-TH_BD5.0-P2.00-D0.5-FD-1.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2831771", manufacturer="KNSCHA", partno="01EC1385">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

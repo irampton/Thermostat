@@ -1,0 +1,74 @@
+# Power conversion modules
+
+import Capacitor, ElectricPower, Electrical
+from "parts/resistors.ato" import Resistor_100k
+from "parts/resistors.ato" import Resistor_10k
+# 14D470 is rated for 30v AC, 47V Varistor 
+from "parts/Hongzhi_Elec_14D470K/Hongzhi_Elec_14D470K.ato" import Hongzhi_Elec_14D470K_package
+from "parts/MDD_Microdiode_Electronics_DB207S/MDD_Microdiode_Electronics_DB207S.ato" import MDD_Microdiode_Electronics_DB207S_package
+from "parts/capacitors.ato" import BulkCap_100uF_16V
+from "parts/DROK_Buck/DROK_Buck.ato" import DROK_Buck
+from "parts/MDD_Microdiode_Electronics_SMBJ36A/MDD_Microdiode_Electronics_SMBJ36A.ato" import MDD_Microdiode_Electronics_SMBJ36A_package
+from "parts/RUILON_SMBJ5_0A/RUILON_SMBJ5_0A.ato" import RUILON_SMBJ5_0A_package
+
+module RectifierReservoirCap:
+    designator_prefix = "C"
+    pin positive
+    pin negative
+
+    body = new Capacitor
+    body.capacitance = 470uF +/- 20%
+    body.max_voltage = 50V
+    body.p1 ~ positive
+    body.p2 ~ negative
+
+module ACLine5VSupply:
+    # Accepts fused AC mains and generates a protected 5V rail
+    ac_hot = new Electrical
+    ac_neutral = new Electrical
+    power_5v = new ElectricPower
+
+    signal dc_plus
+    signal buck_enable
+     
+    mov = new Hongzhi_Elec_14D470K_package
+    ac_hot ~ mov.2
+    ac_neutral ~ mov.1
+
+    rectifier_tvs = new MDD_Microdiode_Electronics_SMBJ36A_package
+    rectifier_tvs.C ~ dc_plus
+    rectifier_tvs.A ~ power_5v.lv
+
+    bridge = new MDD_Microdiode_Electronics_DB207S_package
+    ac_hot ~ bridge.ac1
+    ac_neutral ~ bridge.ac2
+    bridge.pos ~ dc_plus
+    bridge.neg ~ power_5v.lv
+
+    bulk_rect = new RectifierReservoirCap
+    bulk_rect.positive ~ dc_plus
+    bulk_rect.negative ~ power_5v.lv
+
+    enable_divider_top = new Resistor_100k
+    enable_divider_top.a ~ dc_plus
+    enable_divider_top.b ~ buck_enable
+
+    enable_divider_bottom = new Resistor_10k
+    enable_divider_bottom.a ~ buck_enable
+    enable_divider_bottom.b ~ power_5v.lv
+
+    buck = new DROK_Buck
+    buck.vin_plus ~ dc_plus
+    buck.vin_minus ~ power_5v.lv
+    buck.enable ~ buck_enable
+    buck.vout_plus ~ power_5v.hv
+    buck.vout_minus ~ power_5v.lv
+
+    bulk_5v = new BulkCap_100uF_16V
+    bulk_5v.positive ~ power_5v.hv
+    bulk_5v.negative ~ power_5v.lv
+
+    tvs_5v = new RUILON_SMBJ5_0A_package
+    tvs_5v.K ~ power_5v.hv
+    tvs_5v.A ~ power_5v.lv
+

@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component UNI_ROYAL_0603WAF1001T5E_package:
+    """1KΩ (1001) ±1%"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C21190", date="2025-09-28T04:15:24.217120+00:00", checksum="b15d726fbe3e33836ea0bfe65e9fca0468e8ab6aba4b273c587236c0455baacb">
+
+    trait is_atomic_part<manufacturer="UNI-ROYAL", partnumber="0603WAF1001T5E", footprint="R0603.kicad_mod", symbol="0603WAF1001T5E.kicad_sym", model="R0603.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C21190", manufacturer="UNI-ROYAL", partno="0603WAF1001T5E">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 2
+    pin 1

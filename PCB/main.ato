@@ -1,0 +1,154 @@
+# Thermostat controller board using an ESP32 Super Mini.
+# The design exposes HVAC relays, a DROK 5V supply, AHT20 sensor,
+# rotary encoder UI, and a 14-pixel WS2812B status bar.
+
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("TRAITS")
+
+# --- Imports -------------------------------------------------------------------------
+import ElectricPower, ElectricLogic
+from "parts/resistors.ato" import Resistor_10k 
+from "parts/resistors.ato" import Resistor_4k7
+from "parts/resistors.ato" import Resistor_330
+from "parts/capacitors.ato" import BulkCap_100uF_16V
+from "parts/capacitors.ato" import Cap_0u1
+from "parts/HVACHeader5Pin/HVACHeader5Pin.ato" import HVACHeader5Pin
+from "modules/power.ato" import ACLine5VSupply
+from "parts/ESP32C3-supermini/ESP32C3-supermini.ato" import ESP32_C3_SuperMini_driver
+from "parts/AHT20/AHT20.ato" import AHT20
+from "parts/round_rotary/round_rotary.ato" import RotaryEncoder_EC11
+from "modules/lighting.ato" import WS2812Bar14
+from "modules/relays.ato" import RelayStage
+from "parts/Littelfuse_RUEF110/Littelfuse_RUEF110.ato" import Littelfuse_RUEF110_package
+
+# --- Top level -------------------------------------------------------------------------
+module App:
+    # Power nets
+    signal hvac_hot_raw
+    signal hvac_hot
+    signal hvac_common
+    signal gnd
+    signal v5
+    signal v3v3
+
+    # Control nets
+    signal heat_out
+    signal cool_out
+    signal fan_out
+    signal led_data
+    signal led_data_head
+    signal i2c_sda
+    signal i2c_scl
+
+    hvac = new HVACHeader5Pin
+    fuse = new Littelfuse_RUEF110_package
+    mains_supply = new ACLine5VSupply
+    cap_3v3 = new Cap_0u1
+    esp = new ESP32_C3_SuperMini_driver
+    boot_pullup = new Resistor_10k
+    aht20 = new AHT20
+    aht20_decouple = new Cap_0u1
+    sda_pull = new Resistor_4k7
+    scl_pull = new Resistor_4k7
+    rotary = new RotaryEncoder_EC11
+    rotary_a_pull = new Resistor_10k
+    rotary_b_pull = new Resistor_10k
+    rotary_sw_pull = new Resistor_10k
+    rotary_sw_cap = new Cap_0u1
+    ws2812 = new WS2812Bar14
+    ws2812_power = new ElectricPower
+    ws2812_power.hv ~ v5
+    ws2812_power.lv ~ gnd
+    ws2812_power ~ ws2812.power
+
+    ws2812_data_in = new ElectricLogic
+    ws2812_data_in.reference ~ esp.power_3v3
+    ws2812_data_in.line ~ led_data_head
+    ws2812_data_in ~ ws2812.data_in
+
+    ws2812_data_out = new ElectricLogic
+    ws2812_data_out.reference ~ ws2812_power
+    ws2812.data_out ~ ws2812_data_out
+    led_data_res = new Resistor_330
+    led_bulk = new BulkCap_100uF_16V
+    led_decouple = new Cap_0u1
+    relay_heat = new RelayStage
+    relay_cool = new RelayStage
+    relay_fan = new RelayStage
+
+    # HVAC connectivity
+    hvac.power ~ hvac_hot_raw
+    hvac.neutral ~ hvac_common
+    hvac.heat ~ heat_out
+    hvac.cool ~ cool_out
+    hvac.fan ~ fan_out
+
+    hvac_hot_raw ~ fuse.1
+    fuse.2 ~ hvac_hot
+
+    mains_supply.ac_hot ~ hvac_hot
+    mains_supply.ac_neutral ~ hvac_common
+    mains_supply.power_5v.hv ~ v5
+    mains_supply.power_5v.lv ~ gnd
+
+    esp.power_5v.hv ~ v5
+    esp.power_5v.lv ~ gnd
+    esp.power_3v3.hv ~ v3v3
+    esp.power_3v3.lv ~ gnd
+    cap_3v3.a ~ v3v3
+    cap_3v3.b ~ gnd
+    boot_pullup.a ~ v3v3
+    boot_pullup.b ~ esp.gpio[0].line
+
+    aht20.vdd ~ v3v3
+    aht20.gnd ~ gnd
+    aht20.sda ~ i2c_sda
+    aht20.scl ~ i2c_scl
+    aht20_decouple.a ~ v3v3
+    aht20_decouple.b ~ gnd
+    sda_pull.a ~ v3v3
+    sda_pull.b ~ i2c_sda
+    scl_pull.a ~ v3v3
+    scl_pull.b ~ i2c_scl
+    esp.i2c0.sda.line ~ i2c_sda
+    esp.i2c0.scl.line ~ i2c_scl
+
+    rotary.vcc ~ v3v3
+    rotary.gnd ~ gnd
+    rotary.a ~ esp.gpio[4].line
+    rotary.b ~ esp.gpio[5].line
+    rotary.sw ~ esp.gpio[6].line
+    rotary_a_pull.a ~ v3v3
+    rotary_a_pull.b ~ esp.gpio[4].line
+    rotary_b_pull.a ~ v3v3
+    rotary_b_pull.b ~ esp.gpio[5].line
+    rotary_sw_pull.a ~ v3v3
+    rotary_sw_pull.b ~ esp.gpio[6].line
+    rotary_sw_cap.a ~ esp.gpio[6].line
+    rotary_sw_cap.b ~ gnd
+
+    esp.gpio[10].line ~ led_data
+    led_data_res.a ~ led_data
+    led_data_res.b ~ led_data_head
+    led_bulk.positive ~ v5
+    led_bulk.negative ~ gnd
+    led_decouple.a ~ v5
+    led_decouple.b ~ gnd
+
+    relay_heat.control ~ esp.gpio[7].line
+    relay_heat.supply_5v ~ v5
+    relay_heat.ground ~ gnd
+    relay_heat.hot_in ~ hvac_hot
+    relay_heat.switched_out ~ heat_out
+
+    relay_cool.control ~ esp.gpio[8].line
+    relay_cool.supply_5v ~ v5
+    relay_cool.ground ~ gnd
+    relay_cool.hot_in ~ hvac_hot
+    relay_cool.switched_out ~ cool_out
+
+    relay_fan.control ~ esp.gpio[9].line
+    relay_fan.supply_5v ~ v5
+    relay_fan.ground ~ gnd
+    relay_fan.hot_in ~ hvac_hot
+    relay_fan.switched_out ~ fan_out

@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+# AHT20 breakout board part definition
+import has_designator_prefix
+import is_atomic_part
+
+component AHT20_breakout_footprint:
+    trait is_atomic_part<manufacturer="ASAIR", partnumber="AHT20", footprint="AHT20.kicad_mod", symbol="aht20.kicad_sym">
+    trait has_designator_prefix<prefix="U">
+    pin VDD
+    pin GND
+    pin SCL
+    pin SDA
+
+module AHT20:
+    designator_prefix = "U"
+    pin vdd
+    pin gnd
+    pin scl
+    pin sda
+    breakout = new AHT20_breakout_footprint
+    breakout.VDD ~ vdd
+    breakout.GND ~ gnd
+    breakout.SCL ~ scl
+    breakout.SDA ~ sda

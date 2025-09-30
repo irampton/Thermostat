@@ -1,0 +1,168 @@
+(footprint "RUILON_14D201K:RES-TH_L17.0-W4.5-P7.50-D0.9-S2.00"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -5 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "d136da98-d60a-4ce4-83f1-91dae388ef93")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "RES-TH_L17.0-W4.5-P7.50-D0.9-S2.00"
+        (at 0 5 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "47cb3953-e604-469b-937f-a74b725f4c4c")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "5f9a4b43b9fe0184a6596935fda83507ff6b2755ebe05198d08b9f173fe2f3e6"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "f20ef278-7dff-49d5-a9e6-b7f80edab32c")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start -8.5 -2.3)
+        (end -8.5 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "0cc07b57-9e8f-4bc0-be71-68e39760b23c")
+    )
+    (fp_line
+        (start 8.5 -2.3)
+        (end 8.5 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "41cbaee5-f773-4b5c-a30d-451d5c42f881")
+    )
+    (fp_line
+        (start -8.5 -2.3)
+        (end 8.5 -2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "588e7622-b092-46a7-8665-5786b9bd6c84")
+    )
+    (fp_line
+        (start -8.5 2.3)
+        (end 8.5 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "a2fd89b5-ede1-430d-bf45-e630c21c3b95")
+    )
+    (fp_circle
+        (center -8.5 -2.25)
+        (end -8.47 -2.25)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "2562b490-932e-4788-ad2c-1b8c98849145")
+    )
+    (fp_circle
+        (center -3.75 -1)
+        (end -3.53 -1)
+        (stroke
+            (width 0.45)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "11cabf14-6ba9-4da0-9d26-b31a0374bd48")
+    )
+    (fp_circle
+        (center 3.75 1)
+        (end 3.97 1)
+        (stroke
+            (width 0.45)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "a4f30c4d-c849-4df8-a38e-532094a13973")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "a3021302-6067-4e66-8f56-81e7a970543a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -5 0)
+        (layer "F.SilkS")
+        (uuid "d136da98-d60a-4ce4-83f1-91dae388ef93")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" thru_hole circle
+        (at -3.75 -1 0)
+        (size 2 2)
+        (drill 1.1999975999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "0bb461de-0697-47b8-9dab-9e49c09484e7")
+    )
+    (pad "2" thru_hole circle
+        (at 3.75 1 0)
+        (size 2 2)
+        (drill 1.1999975999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "9fbc82fe-777c-4c78-8f89-77e9134c9a7b")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\RUILON_14D201K\\RES-TH_L16.5-W4.5-H20.0-P7.50-D0.8-S2.00.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

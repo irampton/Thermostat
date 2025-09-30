@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component HRK_35V470uF_CD288_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2960393", date="2025-09-25T02:18:46.859688+00:00", checksum="ffc0a04717ed5273840cdac7cad492fa8bde460024c24d87be1ffa3f0c9c2b83">
+
+    trait is_atomic_part<manufacturer="HRK", partnumber="35V470uF CD288", footprint="CAP-TH_BD10.0-P5.00-D0.6-FD.kicad_mod", symbol="35V470UFCD288_C2960393.kicad_sym", model="CAP-TH_BD10.0-P5.00-D0.6-FD.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2960393", manufacturer="HRK", partno="35V470uF CD288">
+    trait has_designator_prefix<prefix="C">
+
+    # pins
+    pin 1
+    pin 2

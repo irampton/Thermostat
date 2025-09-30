@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Hongzhi_Elec_14D330K_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C137829", date="2025-09-29T03:22:54.870681+00:00", checksum="6821332b3f8a1d8626fba26ea8b85a534d65d7141b965c9c6c25428a1cb0081d">
+
+    trait is_atomic_part<manufacturer="Hongzhi Elec", partnumber="14D330K", footprint="RES-TH_L16.5-W4.6-P7.50-D0.8-S2.40.kicad_mod", symbol="14D330K.kicad_sym", model="RES-TH_L16.5-W4.6-H20.0-P7.50-D0.8-S2.40.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C137829", manufacturer="Hongzhi Elec", partno="14D330K">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 2
+    pin 1

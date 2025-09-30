@@ -1,0 +1,154 @@
+(footprint "RUILON_SMBJ30A:SMB_L4.6-W3.6-LS5.3-RD"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "2819004d-49e2-4c8f-9f9b-da9d67af2b66")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "SMB_L4.6-W3.6-LS5.3-RD"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "c28fdb73-cfb8-40f7-aa50-7aea96a55d61")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "210bf7e335261ff756bc73ad8e732ca14699c07e8cfcb3abbf083311cbc069e0"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "69a093de-9422-48a1-922c-089a6bd9eaa9")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -1.02 -1.89)
+        (end -1.02 1.89)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "e910eb83-bef4-47b5-bcd3-183bbcd3243b")
+    )
+    (fp_line
+        (start -2.74 -1.89)
+        (end 2.74 -1.89)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "6df0c262-4879-43f9-bb43-718b1d6c121b")
+    )
+    (fp_line
+        (start -2.74 1.89)
+        (end 2.74 1.89)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "742badaa-24a6-43f0-97c6-cec04657e1b7")
+    )
+    (fp_line
+        (start 2.74 -1.89)
+        (end 2.74 -1.3)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "142db9f2-377a-4306-8396-305ffe8f1c22")
+    )
+    (fp_line
+        (start 2.74 1.89)
+        (end 2.74 1.3)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "c593dfe6-ad3a-46d1-8d9b-32ec7ae1922c")
+    )
+    (fp_circle
+        (center -2.65 1.8)
+        (end -2.62 1.8)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "771549dd-f52c-4973-9cbd-f7463cc0777e")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "93baa65e-15aa-4e93-aa33-3d9e5cf91de9")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "2819004d-49e2-4c8f-9f9b-da9d67af2b66")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 2.36 0 0)
+        (size 2.05 2.19)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "23895466-6aa1-4111-8518-67f6754d62c6")
+    )
+    (pad "1" smd rect
+        (at -2.36 0 0)
+        (size 2.05 2.19)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "1582ad8d-c289-4fa7-bcf8-de14dd048ac3")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\RUILON_SMBJ30A\\SMB_L4.6-W3.6-LS5.3-RD.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

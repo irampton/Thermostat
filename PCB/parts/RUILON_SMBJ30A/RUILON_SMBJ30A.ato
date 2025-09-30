@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component RUILON_SMBJ30A_package:
+    """SMBJ30A"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C10218", date="2025-09-28T18:49:53.921853+00:00", checksum="139de3cb218713e2d4fd611353f6e3b7ae2d44d58a0561e9da5ba12325b4c41d">
+
+    trait is_atomic_part<manufacturer="RUILON", partnumber="SMBJ30A", footprint="SMB_L4.6-W3.6-LS5.3-RD.kicad_mod", symbol="SMBJ30A_C10218.kicad_sym", model="SMB_L4.6-W3.6-LS5.3-RD.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C10218", manufacturer="RUILON", partno="SMBJ30A">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    signal A ~ pin 2
+    signal C ~ pin 1

@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component MDD_Microdiode_Electronics_SMBJ36A_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C114001", date="2025-09-29T03:18:55.006351+00:00", checksum="c5def01d2048ebc6ed559c5d193dc0463485f5020887f87534f3b3cc42da6508">
+
+    trait is_atomic_part<manufacturer="MDD（Microdiode Electronics）", partnumber="SMBJ36A", footprint="SMB_L4.6-W3.6-LS5.3-RD.kicad_mod", symbol="SMBJ36A-C114001.kicad_sym", model="SMB_L4.6-W3.6-LS5.3-RD.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C114001", manufacturer="MDD（Microdiode Electronics）", partno="SMBJ36A">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    signal A ~ pin 2
+    signal C ~ pin 1

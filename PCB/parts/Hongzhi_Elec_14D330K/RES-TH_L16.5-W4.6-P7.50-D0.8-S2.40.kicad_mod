@@ -1,0 +1,188 @@
+(footprint "Hongzhi_Elec_14D330K:RES-TH_L16.5-W4.6-P7.50-D0.8-S2.40"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -5.2 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "c7939188-3953-4bbf-8e15-03da11ed7b99")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "RES-TH_L16.5-W4.6-P7.50-D0.8-S2.40"
+        (at 0 5.2 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "bc583779-c8fa-43d2-b6bc-c1d8ee191c95")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "7b5267e28ad202e11c5efd7041e34ec132ed3d449baa72410ee5fcd6e59c1dcb"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "106932ea-76b6-4cdd-b99e-0cf592b7625e")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start 4.3 2.3)
+        (end 8.25 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7d8eb53b-ecc6-4b45-88ca-a2549e9a25cf")
+    )
+    (fp_line
+        (start -8.25 2.3)
+        (end 3.2 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "a795218b-0367-4f9c-9094-b4f4a2dcb75f")
+    )
+    (fp_line
+        (start -3.2 -2.3)
+        (end 8.25 -2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "5d63508b-3d8a-4314-9d81-9903e0e438a4")
+    )
+    (fp_line
+        (start -8.25 -2.3)
+        (end -4.3 -2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "8d72bf39-5593-40ac-a3f0-e277dd60c9f6")
+    )
+    (fp_line
+        (start -8.25 -2.3)
+        (end -8.25 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7a634044-296f-4fd6-bc8e-cbf088064bbd")
+    )
+    (fp_line
+        (start 8.25 -2.3)
+        (end 8.25 2.3)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "a3bf4cce-b9a7-4623-8d0c-aa8f9b4d44e8")
+    )
+    (fp_circle
+        (center -8.25 -2.3)
+        (end -8.22 -2.3)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "3c8ea45a-c0b1-4dd8-94c3-8334a62cbe44")
+    )
+    (fp_circle
+        (center 3.75 1.2)
+        (end 3.95 1.2)
+        (stroke
+            (width 0.4)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "1fa273d3-71c7-4e11-8237-e2d951650d4b")
+    )
+    (fp_circle
+        (center -3.75 -1.2)
+        (end -3.55 -1.2)
+        (stroke
+            (width 0.4)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "e27b9713-4cde-4254-ba6c-2b631cb0d488")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "0a64e3e1-83b3-40cd-bec0-d9282551dbc8")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -5.2 0)
+        (layer "F.SilkS")
+        (uuid "c7939188-3953-4bbf-8e15-03da11ed7b99")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" thru_hole circle
+        (at -3.75 -1.2 0)
+        (size 2 2)
+        (drill 1.199896)
+        (layers "*.Cu" "*.Mask")
+        (uuid "1a57b1ac-afb3-4b6b-83f5-ceac23379ca8")
+    )
+    (pad "2" thru_hole circle
+        (at 3.75 1.2 0)
+        (size 2 2)
+        (drill 1.199896)
+        (layers "*.Cu" "*.Mask")
+        (uuid "ab94138f-3269-4755-8c8c-7c6c0e688bd8")
+    )
+    (model "${KIPRJMOD}\\..\\..\\parts\\Hongzhi_Elec_14D330K\\RES-TH_L16.5-W4.6-H20.0-P7.50-D0.8-S2.40.step"
+        (offset
+            (xyz -0.1 -0.1 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

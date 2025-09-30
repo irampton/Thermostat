@@ -1,0 +1,27 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component ALPSALPINE_EC09E1524404_package:
+    """Encoder: incremental; Mounting: THT; 15imp/revol; 15000cycles"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C97445", date="2025-09-25T01:56:42.503549+00:00", checksum="bf1bcafb44e9d91b640723d2bdfde4d9ec77aa3a6b41cf7ce0d8ef8e2b3044ac">
+
+    trait is_atomic_part<manufacturer="ALPSALPINE", partnumber="EC09E1524404", footprint="SW-TH_EC09E1524404.kicad_mod", symbol="EC09E1524404.kicad_sym", model="SW-TH_EC09E1524404-L10.5-W10.5-H24.5-P7.8-LS11.5.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C97445", manufacturer="ALPSALPINE", partno="EC09E1524404">
+    trait has_designator_prefix<prefix="SW">
+
+    # pins
+    signal A ~ pin A
+    signal B ~ pin B
+    signal C ~ pin C
+    signal D ~ pin D
+    signal E ~ pin E
+    signal MH1 ~ pin MH1
+    signal MH2 ~ pin MH2
+    signal MH3 ~ pin MH3
+    signal MH4 ~ pin MH4

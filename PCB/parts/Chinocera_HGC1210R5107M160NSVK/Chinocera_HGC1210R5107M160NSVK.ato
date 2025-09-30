@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Chinocera_HGC1210R5107M160NSVK_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C7432790", date="2025-09-25T02:18:45.316028+00:00", checksum="88af8409d70936161f6a7322194d0711866191fe3c60e070c3a50a75fe812c1c">
+
+    trait is_atomic_part<manufacturer="Chinocera", partnumber="HGC1210R5107M160NSVK", footprint="C1210.kicad_mod", symbol="HGC1210R5107M160NSVK.kicad_sym", model="C1210_L3.2-W2.5-H2.5.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C7432790", manufacturer="Chinocera", partno="HGC1210R5107M160NSVK">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    pin 1
+    pin 2

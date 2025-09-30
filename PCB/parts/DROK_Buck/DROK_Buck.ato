@@ -1,0 +1,42 @@
+#pragma experiment("TRAITS")
+
+import has_designator_prefix
+import is_atomic_part
+
+component DROK_Buck_Converter_breakout:
+    """DROK adjustable buck converter breakout (5V-regulated).
+    Pins follow the board silkscreen: EN, IN+/-, OUT+/-."""
+    trait is_atomic_part<manufacturer="DROK", partnumber="DROK BUCK 5v", footprint="DROK_BUCK.kicad_mod", symbol="drok_buck.kicad_sym">
+    trait has_designator_prefix<prefix="U">
+
+    # Footprint pins (exact pad names)
+    pin "EN"
+    pin "IN+"
+    pin "IN-"
+    pin "OUT+"
+    pin "OUT-"
+
+    # Friendly aliases for wiring
+    signal enable ~ pin "EN"
+    signal vin_plus ~ pin "IN+"
+    signal vin_minus ~ pin "IN-"
+    signal vout_plus ~ pin "OUT+"
+    signal vout_minus ~ pin "OUT-"
+
+module DROK_Buck:
+    """Wraps the DROK buck breakout as a simple four-wire regulator plus enable."""
+    designator_prefix = "U"
+    pin vin_plus
+    pin vin_minus
+    pin vout_plus
+    pin vout_minus
+    pin enable
+
+    breakout = new DROK_Buck_Converter_breakout
+
+    breakout.vin_plus ~ vin_plus
+    breakout.vin_minus ~ vin_minus
+    breakout.vout_plus ~ vout_plus
+    breakout.vout_minus ~ vout_minus
+    breakout.enable ~ enable
+

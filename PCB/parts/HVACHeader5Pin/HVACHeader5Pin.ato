@@ -1,0 +1,34 @@
+# Connector modules
+#pragma experiment("TRAITS")
+
+import has_designator_prefix
+import is_atomic_part
+
+component HVACHeader5Pin_Footprint:
+    trait has_designator_prefix<prefix="U">
+    trait is_atomic_part<manufacturer="N/A", partnumber="1x5 Vertical", footprint="HVACHeader5Pin.kicad_mod", symbol="HVACHeader5Pin.kicad_sym">
+    pin "1"
+    pin "2"
+    pin "3"
+    pin "4"
+    pin "5"
+    signal power ~ pin "1"
+    signal neutral ~ pin "2"
+    signal heat ~ pin "3"
+    signal cool ~ pin "4"
+    signal fan ~ pin "5"
+
+
+module HVACHeader5Pin:
+    designator_prefix = "J"
+    pin power
+    pin neutral
+    pin heat
+    pin cool
+    pin fan
+    header = new HVACHeader5Pin_Footprint
+    header.power ~ power
+    header.neutral ~ neutral
+    header.heat ~ heat
+    header.cool ~ cool
+    header.fan ~ fan

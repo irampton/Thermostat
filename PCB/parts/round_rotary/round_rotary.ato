@@ -1,0 +1,39 @@
+#pragma experiment("TRAITS")
+
+import has_designator_prefix
+import is_atomic_part
+
+component RoundRotary_breakout:
+    """Generic EC11-style round rotary encoder breakout with quadrature outputs and push switch."""
+    trait is_atomic_part<manufacturer="Generic", partnumber="ROUND_ROTARY", footprint="ROUND_ROTARY.kicad_mod", symbol="round_rotary.kicad_sym">
+    trait has_designator_prefix<prefix="SW">
+
+    # Exposed footprint pads
+    pin "CLK"
+    pin "S1"
+    pin "S2"
+    pin "VCC"
+    pin "GND"
+
+    # Friendly signal names for wiring
+    signal phase_a ~ pin "CLK"
+    signal phase_b ~ pin "S1"
+    signal switch ~ pin "S2"
+    signal vcc ~ pin "VCC"
+    signal gnd ~ pin "GND"
+
+module RotaryEncoder_EC11:
+    designator_prefix = "SW"
+    pin a
+    pin b
+    pin sw
+    pin vcc
+    pin gnd
+
+    encoder = new RoundRotary_breakout
+
+    encoder.phase_a ~ a
+    encoder.phase_b ~ b
+    encoder.switch ~ sw
+    encoder.vcc ~ vcc
+    encoder.gnd ~ gnd
