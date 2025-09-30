@@ -1,0 +1,34 @@
+#pragma experiment("TRAITS")
+
+import has_designator_prefix
+import is_atomic_part
+
+component LM2596_board_breakout:
+    """Generic LM2596 adjustable buck converter board with four corner pins."""
+    trait is_atomic_part<manufacturer="Generic", partnumber="LM2596 Step-Down Board", footprint="LM2596_bord.kicad_mod", symbol="LM2596_board.kicad_sym">
+    trait has_designator_prefix<prefix="U">
+
+    pin "IN+"
+    pin "IN-"
+    pin "OUT+"
+    pin "OUT-"
+
+    signal vin_plus ~ pin "IN+"
+    signal vin_minus ~ pin "IN-"
+    signal vout_plus ~ pin "OUT+"
+    signal vout_minus ~ pin "OUT-"
+
+module LM2596_board:
+    """Convenience wrapper exposing the LM2596 board as simple in/out rails."""
+    designator_prefix = "U"
+    pin vin_plus
+    pin vin_minus
+    pin vout_plus
+    pin vout_minus
+
+    breakout = new LM2596_board_breakout
+
+    breakout.vin_plus ~ vin_plus
+    breakout.vin_minus ~ vin_minus
+    breakout.vout_plus ~ vout_plus
+    breakout.vout_minus ~ vout_minus

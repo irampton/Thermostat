@@ -7,7 +7,7 @@ from "parts/resistors.ato" import Resistor_10k
 from "parts/Hongzhi_Elec_14D470K/Hongzhi_Elec_14D470K.ato" import Hongzhi_Elec_14D470K_package
 from "parts/MDD_Microdiode_Electronics_DB207S/MDD_Microdiode_Electronics_DB207S.ato" import MDD_Microdiode_Electronics_DB207S_package
 from "parts/capacitors.ato" import BulkCap_100uF_16V
-from "parts/DROK_Buck/DROK_Buck.ato" import DROK_Buck
+from "parts/LM2596_board/LM2596_board.ato" import LM2596_board
 from "parts/MDD_Microdiode_Electronics_SMBJ36A/MDD_Microdiode_Electronics_SMBJ36A.ato" import MDD_Microdiode_Electronics_SMBJ36A_package
 from "parts/RUILON_SMBJ5_0A/RUILON_SMBJ5_0A.ato" import RUILON_SMBJ5_0A_package
 
@@ -57,10 +57,9 @@ module ACLine5VSupply:
     enable_divider_bottom.a ~ buck_enable
     enable_divider_bottom.b ~ power_5v.lv
 
-    buck = new DROK_Buck
+    buck = new LM2596_board
     buck.vin_plus ~ dc_plus
     buck.vin_minus ~ power_5v.lv
-    buck.enable ~ buck_enable
     buck.vout_plus ~ power_5v.hv
     buck.vout_minus ~ power_5v.lv
 

@@ -1,0 +1,23 @@
+(kicad_symbol_lib (version 20211014) (generator "chatgpt")
+  (symbol "LM2596_board" (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (property "Reference" "U" (at 0 6 0)
+      (effects (font (size 1.27 1.27))))
+    (property "Value" "LM2596_board" (at 0 -6 0)
+      (effects (font (size 1.27 1.27))))
+    (property "Footprint" "CustomLib:CornerPins_4x1_45x20_guess" (at 0 -8 0) (effects (font (size 1 1))))
+    (property "Datasheet" "" (at 0 -10 0) (effects (font (size 1 1))))
+
+    ; simple rectangle body
+    (rectangle (start -7 4) (end 7 -4) (stroke (width 0.15)) (fill (type none)))
+
+    ; PINS — left side (inputs), right side (outputs). All set to Passive to avoid ERC noise.
+    ; IN+  = pin 3 (top-left)   IN- = pin 1 (bottom-left)
+    ; OUT+ = pin 4 (top-right)  OUT- = pin 2 (bottom-right)
+
+    (pin passive line (at -10 2 0) (length 3) (name "IN+"  (effects (font (size 1 1)))) (number "3"))
+    (pin passive line (at -10 -2 0) (length 3) (name "IN-" (effects (font (size 1 1)))) (number "1"))
+
+    (pin passive line (at 10 2 180) (length 3) (name "OUT+" (effects (font (size 1 1)))) (number "4"))
+    (pin passive line (at 10 -2 180) (length 3) (name "OUT-" (effects (font (size 1 1)))) (number "2"))
+  )
+)

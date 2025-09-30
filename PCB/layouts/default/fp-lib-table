@@ -92,6 +92,13 @@
         (descr "atopile: part lib: KNSCHA_01EC1385")
     )
     (lib
+        (name "LM2596_board")
+        (type "KiCad")
+        (uri "${KIPRJMOD}\\..\\..\\parts\\LM2596_board")
+        (options "")
+        (descr "atopile: part lib: LM2596_board")
+    )
+    (lib
         (name "Littelfuse_RUEF110")
         (type "KiCad")
         (uri "${KIPRJMOD}\\..\\..\\parts\\Littelfuse_RUEF110")
@@ -244,5 +251,12 @@
         (uri "${KIPRJMOD}\\..\\..\\parts\\round_rotary")
         (options "")
         (descr "atopile: part lib: round_rotary")
+    )
+    (lib
+        (name "Worldsemi_WS2812B_V5_W")
+        (type "KiCad")
+        (uri "${KIPRJMOD}\\..\\..\\.ato\\modules\\atopile\\worldsemi-ws2812b\\parts\\Worldsemi_WS2812B_V5_W")
+        (options "")
+        (descr "atopile: part lib: Worldsemi_WS2812B_V5_W")
     )
 )
