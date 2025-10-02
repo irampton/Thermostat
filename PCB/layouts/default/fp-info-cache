@@ -1,4 +1,18 @@
-26657474581366373
+26701465207077076
+AHT20
+AHT20
+
+
+0
+4
+4
+AISHI_ERJ1HM471G16C36T
+CAP-TH_BD10.0-P5.00-D1.0-FD
+
+
+0
+2
+2
 ALPSALPINE_EC09E1524404
 SW-TH_EC09E1524404
 
@@ -59338,6 +59352,13 @@ ceramic
 0
 3
 3
+DROK_Buck
+DROK_BUCK
+
+
+0
+5
+5
 Diode_SMD
 D_0201_0603Metric
 Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -61361,6 +61382,20 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+ESP32C3-supermini
+ESP32C3-supermini
+
+
+0
+16
+16
+FOJAN_FCC0402B104K160AT
+C0402
+
+
+0
+2
+2
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -62439,6 +62474,13 @@ GDT 3R-6
 0
 3
 3
+Guangdong_Hottech_AO3400
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR
+
+
+0
+3
+3
 HRK_35V470uF_CD288
 CAP-TH_BD10.0-P5.00-D0.6-FD
 
@@ -62446,6 +62488,13 @@ CAP-TH_BD10.0-P5.00-D0.6-FD
 0
 2
 2
+HVACHeader5Pin
+HVACHeader5Pin
+Through hole straight pin header, 1x05, 1.00mm pitch, single row
+Through hole pin header THT 1x05 1.00mm single row
+0
+5
+5
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -62663,6 +62712,20 @@ heatsink
 0
 0
 0
+Hongzhi_Elec_14D330K
+RES-TH_L16.5-W4.6-P7.50-D0.8-S2.40
+
+
+0
+2
+2
+Hongzhi_Elec_14D470K
+RES-TH_L16.5-W4.6-P7.50-D0.8-S2.40
+
+
+0
+2
+2
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -69404,6 +69467,13 @@ solder jumper open
 0
 3
 3
+KNSCHA_01EC1385
+CAP-TH_BD5.0-P2.00-D0.5-FD-1
+
+
+0
+2
+2
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -70654,6 +70724,41 @@ LED_THT
 LED_VCCLite_5381H7_6.35x6.35mm
 Yellow 5381 Series LED VCCLite https://vcclite.com/wp-content/uploads/wpallimport/files/files/5381Series.pdf http://static.vcclite.com/pdf/Mounting%20Hole%20Pattern%202.pdf
 Yellow 5381 Series LED
+0
+2
+2
+LM2596_board
+LM2596_bord
+
+
+0
+4
+4
+Littelfuse_RUEF110
+FUSE-TH_L7.0-W3.1-P5.08-D1.2
+
+
+0
+2
+2
+MDD_Microdiode_Electronics_DB207S
+DBS_L8.2-W6.4-P5.10-LS10.0-TL
+
+
+0
+4
+4
+MDD_Microdiode_Electronics_SMBJ36A
+SMB_L4.6-W3.6-LS5.3-RD
+
+
+0
+2
+2
+MDD_Microdiode_Electronics_SS14
+SMA_L4.2-W2.6-LS5.0-RD_1
+
+
 0
 2
 2
@@ -73590,6 +73695,13 @@ net tie
 0
 4
 4
+Ningbo_Songle_Relay_SRD_05VDC_SL_C
+RELAY-TH_SRD-XXVDC-XL-C
+
+
+0
+5
+5
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
@@ -94884,6 +94996,27 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+RUILON_14D201K
+RES-TH_L17.0-W4.5-P7.50-D0.9-S2.00
+
+
+0
+2
+2
+RUILON_SMBJ5_0A
+SMB_L4.6-W3.6-LS5.3-RD
+
+
+0
+2
+2
+RUILON_SMBJ30A
+SMB_L4.6-W3.6-LS5.3-RD
+
+
+0
+2
+2
 Relay_SMD
 Relay_2P2T_10x6mm_TE_IMxxG
 Signal Relay, 10x6mm, 2 Form C, Gull Wings, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F108-98001%7FZ.1%7Fpdf%7FEnglish%7FENG_DS_108-98001_Z.1.pdf
@@ -97208,6 +97341,13 @@ rotary encoder illuminated switch vertical
 0
 9
 8
+Samsung_Electro_Mechanics_CL05B104KB54PNC
+C0402
+
+
+0
+2
+2
 Samsung_Electro_Mechanics_CL05B104KO5NNNC
 C0402
 
@@ -97216,6 +97356,13 @@ C0402
 2
 2
 Samsung_Electro_Mechanics_CL21A106KOQNNNE
+C0805
+
+
+0
+2
+2
+Samsung_Electro_Mechanics_CL21B106KOQNNNE
 C0805
 
 
@@ -104747,6 +104894,13 @@ test point THT pad
 0
 1
 1
+Texas_Instruments_SN74HCT125DR
+SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL
+
+
+0
+14
+14
 Transformer_SMD
 Pulse_P0926NL
 SMT Gate Drive Transformer, 1:1:1, 8.0x6.3x5.3mm (https://productfinder.pulseeng.com/products/datasheets/SPM2007_61.pdf)
@@ -105601,6 +105755,13 @@ R0402
 0
 2
 2
+UNI_ROYAL_0603WAF1001T5E
+R0603
+
+
+0
+2
+2
 UNI_ROYAL_0603WAF1002T5E
 R0603
 
@@ -105616,6 +105777,13 @@ R0603
 2
 2
 UNI_ROYAL_0603WAF3300T5E
+R0603
+
+
+0
+2
+2
+UNI_ROYAL_0603WAF4701T5E
 R0603
 
 
@@ -106420,3 +106588,10 @@ C0603
 0
 2
 2
+round_rotary
+ROUND_ROTARY
+
+
+0
+5
+5

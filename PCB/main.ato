@@ -36,7 +36,6 @@ module App:
     signal cool_out
     signal fan_out
     signal led_data
-    signal led_data_head
     signal i2c_sda
     signal i2c_scl
 
@@ -45,16 +44,9 @@ module App:
     mains_supply = new ACLine5VSupply
     cap_3v3 = new Cap_0u1
     esp = new ESP32_C3_SuperMini_driver
-    boot_pullup = new Resistor_10k
     aht20 = new AHT20
     aht20_decouple = new Cap_0u1
-    sda_pull = new Resistor_4k7
-    scl_pull = new Resistor_4k7
     rotary = new RotaryEncoder_EC11
-    rotary_a_pull = new Resistor_10k
-    rotary_b_pull = new Resistor_10k
-    rotary_sw_pull = new Resistor_10k
-    rotary_sw_cap = new Cap_0u1
     ws2812 = new WS2812Bar14
     ws2812_power = new ElectricPower
     ws2812_power.hv ~ v5
@@ -63,15 +55,13 @@ module App:
 
     ws2812_data_in = new ElectricLogic
     ws2812_data_in.reference ~ esp.power_3v3
-    ws2812_data_in.line ~ led_data_head
+    ws2812_data_in.line ~ led_data
     ws2812_data_in ~ ws2812.data_in
 
     ws2812_data_out = new ElectricLogic
     ws2812_data_out.reference ~ ws2812_power
     ws2812.data_out ~ ws2812_data_out
     led_data_res = new Resistor_330
-    led_bulk = new BulkCap_100uF_16V
-    led_decouple = new Cap_0u1
     relay_heat = new RelayStage
     relay_cool = new RelayStage
     relay_fan = new RelayStage
@@ -97,8 +87,6 @@ module App:
     esp.power_3v3.lv ~ gnd
     cap_3v3.a ~ v3v3
     cap_3v3.b ~ gnd
-    boot_pullup.a ~ v3v3
-    boot_pullup.b ~ esp.gpio[0].line
 
     aht20.vdd ~ v3v3
     aht20.gnd ~ gnd
@@ -106,10 +94,6 @@ module App:
     aht20.scl ~ i2c_scl
     aht20_decouple.a ~ v3v3
     aht20_decouple.b ~ gnd
-    sda_pull.a ~ v3v3
-    sda_pull.b ~ i2c_sda
-    scl_pull.a ~ v3v3
-    scl_pull.b ~ i2c_scl
     esp.i2c0.sda.line ~ i2c_sda
     esp.i2c0.scl.line ~ i2c_scl
 
@@ -118,22 +102,8 @@ module App:
     rotary.a ~ esp.gpio[4].line
     rotary.b ~ esp.gpio[5].line
     rotary.sw ~ esp.gpio[6].line
-    rotary_a_pull.a ~ v3v3
-    rotary_a_pull.b ~ esp.gpio[4].line
-    rotary_b_pull.a ~ v3v3
-    rotary_b_pull.b ~ esp.gpio[5].line
-    rotary_sw_pull.a ~ v3v3
-    rotary_sw_pull.b ~ esp.gpio[6].line
-    rotary_sw_cap.a ~ esp.gpio[6].line
-    rotary_sw_cap.b ~ gnd
 
     esp.gpio[10].line ~ led_data
-    led_data_res.a ~ led_data
-    led_data_res.b ~ led_data_head
-    led_bulk.positive ~ v5
-    led_bulk.negative ~ gnd
-    led_decouple.a ~ v5
-    led_decouple.b ~ gnd
 
     relay_heat.control ~ esp.gpio[7].line
     relay_heat.supply_5v ~ v5
